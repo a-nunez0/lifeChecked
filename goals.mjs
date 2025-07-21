@@ -48,8 +48,60 @@ const goals = [
       name: "Complete a Marathon",
       term: "Long",
       description: "Train and successfully run a full marathon race."
+    },
+    // Added 10 more goals
+    {
+      name: "Volunteer Abroad",
+      term: "Long",
+      description: "Spend time volunteering in a foreign country to help communities."
+    },
+    {
+      name: "Master Cooking Skills",
+      term: "Long",
+      description: "Learn to cook a variety of cuisines from scratch."
+    },
+    {
+      name: "Attend a Music Festival",
+      term: "Short",
+      description: "Experience a live music festival with friends."
+    },
+    {
+      name: "Take a Photography Course",
+      term: "Short",
+      description: "Improve photography skills through a formal course."
+    },
+    {
+      name: "Go Skydiving",
+      term: "Short",
+      description: "Experience the thrill of jumping out of a plane."
+    },
+    {
+      name: "Plant a Garden",
+      term: "Short",
+      description: "Grow your own flowers, herbs, or vegetables at home."
+    },
+    {
+      name: "Write a Journal",
+      term: "Short",
+      description: "Maintain a daily journal to reflect on your thoughts and progress."
+    },
+    {
+      name: "Visit All 50 States",
+      term: "Long",
+      description: "Travel across the USA to visit every state."
+    },
+    {
+      name: "Take a Road Trip",
+      term: "Short",
+      description: "Plan and go on a road trip to explore nearby places."
+    },
+    {
+      name: "Learn to Swim",
+      term: "Short",
+      description: "Take lessons to become a confident swimmer."
     }
-  ];
+];
   
-  export default goals;
+export default goals;
+  
   

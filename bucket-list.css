@@ -1,0 +1,311 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato");
+
+/* ========== CSS Variables ========== */
+:root {
+  --primary-color: #616163;
+  --secondary-color: #B5FFE9;
+  --accent1-color: #F0E6EF;
+  --accent2-color: #1E000E;
+
+  --heading-font: "IM Fell French Canon SC", serif;
+  --paragraph-font: Lato, Helvetica, sans-serif;
+
+  --headline-color-on-white: var(--primary-color);
+  --headline-color-on-color: var(--accent2-color);
+  --paragraph-color-on-white: var(--primary-color);
+  --paragraph-color-on-color: var(--accent2-color);
+  --paragraph-background-color: var(--primary-color);
+
+  --nav-link-color: var(--primary-color);
+  --nav-background-color: var(--secondary-color);
+  --nav-hover-link-color: white;
+  --nav-hover-background-color: var(--primary-color);
+}
+
+body {
+  font-family: var(--paragraph-font);
+  margin: 0;
+  background-color: white;
+  color: var(--paragraph-color-on-white);
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--nav-background-color);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.site-name {
+  font-family: var(--heading-font);
+  font-size: 1.4rem;
+  color: var(--headline-color-on-white);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--nav-link-color);
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+}
+
+.nav-links a:hover {
+  background-color: var(--nav-hover-background-color);
+  color: var(--nav-hover-link-color);
+}
+
+/* Top bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.top-bar h1 {
+  font-family: var(--heading-font);
+  font-size: 2rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+#add-btn,
+.filter-dropdown {
+  height: 44px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#add-btn:hover,
+.filter-dropdown:hover,
+.filter-dropdown:focus {
+  background-color: var(--accent2-color);
+  outline: none;
+  box-shadow: 0 0 5px var(--accent2-color);
+}
+
+/* Goal List */
+.goal-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.goal-item {
+  background-color: var(--accent1-color);
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.goal-item.expanded {
+  transform: scale(1.02);
+  background-color: var(--secondary-color);
+}
+
+.goal-item h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--heading-font);
+}
+
+.goal-item p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modal-content h2 {
+  font-family: var(--heading-font);
+  margin-top: 0;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content button {
+  align-self: flex-end;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: var(--accent2-color);
+}
+
+/* Close button*/
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #e60000;
+}
+
+/* Success message */
+#success-msg {
+  font-size: 1rem;
+  color: green;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  flex-wrap: wrap;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.social-icons img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* ========== Responsive ========== */
+@media (min-width: 768px) {
+    .feature {
+      flex-direction: row;
+      text-align: left;
+    }
+  
+    .feature:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  
+    .feature img {
+      flex: 1;
+    }
+  
+    .feature-text {
+      flex: 1;
+      padding: 1rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+}

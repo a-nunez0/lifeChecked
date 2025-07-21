@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Bucket List</title>
+  <link rel="stylesheet" href="bucket-list.css" />
+  <script type="module" src="./main.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="images/LF.png" alt="Life Checked Logo" class="logo" />
+      <span class="site-name">Life Checked</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="bucket-list.html" class="active">My List</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="top-bar">
+      <h1>My Bucket List</h1>
+      <div class="button-group">
+        <select id="term-filter" aria-label="Filter goals by term" class="filter-dropdown">
+          <option value="All">Filter by Term</option>
+          <option value="Short">Short</option>
+          <option value="Long">Long</option>
+        </select>
+        <button id="add-btn">Add Goal</button>
+      </div>
+    </section>
+
+    <section class="goal-container">
+      <ul id="goal-list" class="goal-list"></ul>
+    </section>
+  </main>
+
+  <div id="goal-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Add New Goal</h2>
+      <form id="goal-form">
+        <label for="goal-name">Name:</label>
+        <input type="text" id="goal-name" name="name" required />
+
+        <label for="goal-term">Term:</label>
+        <select id="goal-term" name="term" required>
+          <option value="">Select Term</option>
+          <option value="Short">Short</option>
+          <option value="Long">Long</option>
+        </select>
+
+        <label for="goal-desc">Description:</label>
+        <textarea id="goal-desc" name="description" required></textarea>
+
+        <button type="submit">Add Goal</button>
+      </form>
+
+      <!-- Success Message -->
+      <p id="success-msg" class="hidden">Your goal has been added</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Connect with us:</p>
+    <div class="social-icons">
+      <a href="https://Instagram.com" target="_blank" aria-label="Instagram">
+        <img src="images/instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter / X">
+        <img src="images/twitter.png" alt="X (Twitter)" />
+      </a>
+    </div>
+    <p>&copy; 2025 Life Checked</p>
+  </footer>
+</body>
+</html>
+
